@@ -35,7 +35,7 @@ reviews_df = reviews_df.sort_values(['reviewerID', 'unixReviewTime'])
 reviews_df = reviews_df.reset_index(drop=True)
 reviews_df = reviews_df[['reviewerID', 'asin', 'unixReviewTime']]
 
-cate_list = [meta_df['categories'][i] for i in range(len(asin_map))]
+cate_list = [meta_df['categories'][i] for i in range(len(asin_map))]  #按照商品id的顺序排列，覆盖了所有的商品id的category
 cate_list = np.array(cate_list, dtype=np.int32)
 
 
